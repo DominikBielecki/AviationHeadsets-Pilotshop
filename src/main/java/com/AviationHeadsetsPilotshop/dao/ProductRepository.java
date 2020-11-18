@@ -13,4 +13,6 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
     Page<Product> findByCategoryId(@RequestParam("id") Long id, Pageable pageable);
     //Query Method, behind is something similar to this: SELECT * FROM product where category_id=?
 
+    Page<Product> findByNameContaining(@RequestParam("name")String name, Pageable pageable);
+
 }
